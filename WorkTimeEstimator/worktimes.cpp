@@ -102,19 +102,19 @@ QTime WorkTimes::getWorkTimeTilHome (){
 
         // day overlap
 
-        seconds = workTimeTilHome.second()- currentTime.second();
+        seconds += workTimeTilHome.second()- currentTime.second();
         if (seconds < 0){
             minutes--;
             seconds += 60;
         }
 
-        minutes = workTimeTilHome.minute() - currentTime.minute();
+        minutes += workTimeTilHome.minute() - currentTime.minute();
         if (minutes < 0){
             hours--;
             minutes += 60;
         }
 
-        hours = workTimeTilHome.hour() - currentTime.hour();
+        hours += workTimeTilHome.hour() - currentTime.hour();
         // now hours overflow
 
         if (hours < 0){hours += 23;
